@@ -4,7 +4,7 @@ using System;
 
 namespace GameDevToolKit.Editor
 {
-    public class SaveScreenshotToFile : Editor
+    public class SaveScreenshotToFile
     {
         static private Camera SelectedCamera = null;
 

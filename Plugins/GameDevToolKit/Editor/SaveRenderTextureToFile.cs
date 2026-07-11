@@ -3,7 +3,7 @@ using UnityEditor;
 
 namespace GameDevToolKit.Editor
 {
-    public class SaveRenderTextureToFile : Editor
+    public class SaveRenderTextureToFile
     {
         [MenuItem("Game Dev Tool Kit/Save RenderTexture to file")]
         public static void SaveRTToFile()

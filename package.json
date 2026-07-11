@@ -1,10 +1,13 @@
 {
   "name": "com.pycraftdeveloper.gamedevtoolkit",
   "displayName": "Game Dev Tool Kit",
-  "version": "0.6.0",
+  "version": "0.8.0",
   "documentationUrl": "https://github.com/PycraftDeveloper/Game-Dev-Tool-Kit",
   "changelogUrl": "https://github.com/PycraftDeveloper/Game-Dev-Tool-Kit/releases",
   "licensesUrl": "https://github.com/PycraftDeveloper/Game-Dev-Tool-Kit/blob/main/LICENSE",
   "description": "This package aims to provide some much needed tools and utilities for game development in Unity! This includes tools for both designers and programmers.",
-  "hideInEditor": false
+  "hideInEditor": false,
+  "dependencies": {
+    "com.unity.textmeshpro": "3.0.6"
+  }
 }
