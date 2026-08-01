@@ -1,6 +1,20 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+
+[System.Flags]
+public enum LogTypeFilter
+{
+    None = 0,
+    Log = 1 << 0,
+    Assert = 1 << 1,
+    Warning = 1 << 2,
+    Error = 1 << 3,
+    Exception = 1 << 4,
+
+    All = Log | Assert | Error | Exception | Warning
+}
 
 /// <summary>
 /// This script allows the displaying of debug messages on a Canvas for debugging in-game. Only the
@@ -12,7 +26,13 @@ public class DebugDisplay : MonoBehaviour
     private List<string> debugLogs = new List<string>();
 
     [Tooltip("The Text Mesh Pro that should be used to display the logs.")]
-    public TMP_Text display;
+    [SerializeField] private TMP_Text LoggingTextElement;
+
+    [Tooltip("Which log types to display")]
+    [SerializeField] private LogTypeFilter LoggingTypes = LogTypeFilter.All;
+
+    [Tooltip("How many logs to display?")]
+    [SerializeField] private int NumberOfLogsToShow = 22;
 
     /// <summary>
     /// Starts listening for log events on start
@@ -38,14 +58,22 @@ public class DebugDisplay : MonoBehaviour
     /// <param name="type">The type of log</param>
     private void HandleLog(string logString, string stackTrace, LogType type)
     {
-        if (type == LogType.Log)
+        LogTypeFilter flag = type switch
         {
-            string[] splitString = logString.Split(char.Parse(":"));
+            LogType.Log => LogTypeFilter.Log,
+            LogType.Assert => LogTypeFilter.Assert,
+            LogType.Error => LogTypeFilter.Error,
+            LogType.Exception => LogTypeFilter.Exception,
+            LogType.Warning => LogTypeFilter.Warning,
+            _ => LogTypeFilter.None
+        };
 
-            debugLogs.Add(logString);
-        }
+        if ((LoggingTypes & flag) == 0)
+            return;
 
-        if (debugLogs.Count > 22)
+        debugLogs.Add($"{type}: {logString}");
+
+        if (debugLogs.Count > NumberOfLogsToShow)
         {
             debugLogs.RemoveAt(0);
         }
@@ -56,6 +84,6 @@ public class DebugDisplay : MonoBehaviour
             displayText += log + "\n";
         }
 
-        display.text = displayText;
+        LoggingTextElement.text = displayText;
     }
 }

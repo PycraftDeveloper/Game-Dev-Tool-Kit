@@ -1,0 +1,7 @@
+Unity+
+======
+
+* Better Debug logs
+* Improved Collider closest point to work if point is inside.
+* Better raycasting for if point is inside.
+* Camera Aspect Ratio Fixer
