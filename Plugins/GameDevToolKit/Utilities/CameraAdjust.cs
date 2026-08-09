@@ -12,6 +12,7 @@ public class CameraAdjust : MonoBehaviour
     [SerializeField] private bool ContinuousEnforcement = true;
 
     private Vector2 lastScreenSize;
+
     private void Start()
     {
         Adjust();
@@ -21,10 +22,13 @@ public class CameraAdjust : MonoBehaviour
 
     private void Update()
     {
-        if (Screen.width != lastScreenSize.x || Screen.height != lastScreenSize.y)
+        if (ContinuousEnforcement)
         {
-            lastScreenSize = new Vector2(Screen.width, Screen.height);
-            Adjust();
+            if (Screen.width != lastScreenSize.x || Screen.height != lastScreenSize.y)
+            {
+                lastScreenSize = new Vector2(Screen.width, Screen.height);
+                Adjust();
+            }
         }
     }
 
@@ -41,7 +45,8 @@ public class CameraAdjust : MonoBehaviour
         if (TargetCamera == null)
         {
             cam = Camera.main;
-        } else
+        }
+        else
         {
             cam = TargetCamera;
         }
