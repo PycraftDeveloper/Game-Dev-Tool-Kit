@@ -1,4 +1,6 @@
-= Game Dev Tool Kit (v0.11.0) =
+# Game Dev Tool Kit
+
+### _(v0.21.0)_
 
 Documentation: https://github.com/PycraftDeveloper/Game-Dev-Tool-Kit
 E-mail: thomasjebbo@gmail.com
@@ -7,11 +9,11 @@ More content is added regularly. Have a recommendation, leave it as an issue on 
 
 The contents listed here have been tested in the Universal Render Pipeline (URP) for Unity 6000, although most of these resources will support other versions and pipelines with a little work (We are also working to support more pipelines!)
 
-Documentation
-=============
+# Documentation
 
-Editor
-======
+# Editor
+
+_**Note: You do NOT need to do anything for these scripts to work in engine!**_
 
 Quick Links - This script allows you to open the project folder easily from the new 'Game Dev Tool Kit' tab.
 
@@ -19,21 +21,22 @@ Save Render Texture To File - This script allows you to write the contents of th
 
 Save Screenshot To File - This script allows you to write the current game scene view (at the resolution selected in the inspector for the game to run at) to an image file on your machine. Note: This currently does not support some Canvas configurations.
 
-Materials
-=========
+Material Variant Button - Makes the option to 'Create a material variant' on a locked shader much easier to find. This allows you to more easily create material variants.
+
+# Materials
 
 Wrap Around Sky - This asset modifies the existing Physics Based Sky material for the Universal Render Pipeline (URP). The default sky material provided by Unity has an ugly 'ground' effect when looking down. This material removes this and replaces it with yet more sky. This is ideal for 3D games that take place in the sky, rarther than on a ground plane.
 
 Terrain Material - This asset adds a realistic, high quality grass/rock material for use on all models. This material blends grass on the flat surface and rock on vertical surfaces. This also adds noise which allows the texture to repeat seamlessly across large models. This supports Unity Terrain (although with warnings that can be ignored). Note: This material is expensive so use with caution on lower power platforms like mobile.
 
-Prefabs
-=======
+# Prefabs
+
 (Just add these to your scene, no setup required!)
 
 Virtual Console - This allows you to place a Canvas in your 3D scene that can be used to display debug content. You can also add your own scripts and use it as a text display in your scene. You can filter Debug - Logs, Warnings, Errors and more!
 
-Utilities
-=========
+# Utilities
+
 (C# programming helpers and designer tools!)
 
 Camera Adjust - (No programming required) Add this to your scene to force the camera to use a specific aspect ratio! Black bars will be added to displays to ensure the content remains centered on-screen at the desired aspect ratio.
