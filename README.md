@@ -23,6 +23,10 @@ Save Screenshot To File - This script allows you to write the current game scene
 
 Material Variant Button - Makes the option to 'Create a material variant' on a locked shader much easier to find. This allows you to more easily create material variants.
 
+Scene Name Tags - This allows Unity to draw name tags above each game object in the scene using gizmos. Only tags close to the camera (in editor and game with gizmos active) will render, or at any distance if the game object is selected.
+
+Iconify Hierarchy - Allows the colored icons you can choose for a game object in the inspector to change the color of the icon in the hierarchy!
+
 # Materials
 
 Wrap Around Sky - This asset modifies the existing Physics Based Sky material for the Universal Render Pipeline (URP). The default sky material provided by Unity has an ugly 'ground' effect when looking down. This material removes this and replaces it with yet more sky. This is ideal for 3D games that take place in the sky, rarther than on a ground plane.
