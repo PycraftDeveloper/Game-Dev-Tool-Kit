@@ -27,6 +27,10 @@ Scene Name Tags - This allows Unity to draw name tags above each game object in 
 
 Iconify Hierarchy - Allows the colored icons you can choose for a game object in the inspector to change the color of the icon in the hierarchy!
 
+Read Only Field Attribute - Changes how the inspector draws a field so it is treated as read only.
+
+Read Only Play Mode Attribute - Forces a field to become locked when the game is running to prevent it from being edited at runtime in the inspector.
+
 # Materials
 
 Wrap Around Sky - This asset modifies the existing Physics Based Sky material for the Universal Render Pipeline (URP). The default sky material provided by Unity has an ugly 'ground' effect when looking down. This material removes this and replaces it with yet more sky. This is ideal for 3D games that take place in the sky, rarther than on a ground plane.
@@ -54,3 +58,7 @@ Sound Effect Manager - This script can be used to create and play Extended One S
 Vector Extensions - This script allows you to swizzle and flatten Vector2 and Vector3 data types in Unity to your hearts content. This is similar to the Swizzling API commonly seen in shaders! Flattened Vectors allow you to take one or more of the values inside it, and set them to zero when getting it!
 
 Virtual Console - Used to make the Virtual console prefab work! You do not need to interact with this script at all.
+
+Read Only Field - Makes a field in the inspector read only.
+
+Read Only Play Mode Attribute - Makes a field in the inspector read only, only during runtime allowing for changes only when the game isnt running.
