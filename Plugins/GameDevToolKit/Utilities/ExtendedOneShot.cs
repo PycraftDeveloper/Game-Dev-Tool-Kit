@@ -1,15 +1,18 @@
 using UnityEngine;
 
-public class ExtendedOneShot : MonoBehaviour
+namespace GameDevToolKit
 {
-    public float Lifetime;
-
-    private void Update()
+    public class ExtendedOneShot : MonoBehaviour
     {
-        Lifetime -= Time.deltaTime;
-        if (Lifetime < 0)
+        public float Lifetime;
+
+        private void Update()
         {
-            Destroy(gameObject);
+            Lifetime -= Time.deltaTime;
+            if (Lifetime < 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

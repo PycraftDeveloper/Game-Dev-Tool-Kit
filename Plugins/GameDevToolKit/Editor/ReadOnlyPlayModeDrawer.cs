@@ -1,25 +1,28 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-[CustomPropertyDrawer(typeof(ReadOnlyPlayModeAttribute))]
-public class ReadOnlyPlayModeDrawer : PropertyDrawer
+namespace GameDevToolKit.Editor
 {
-    public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+    [CustomPropertyDrawer(typeof(ReadOnlyPlayModeAttribute))]
+    public class ReadOnlyPlayModeDrawer : PropertyDrawer
     {
-        return EditorGUI.GetPropertyHeight(property, label, true);
-    }
-
-    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
-    {
-        bool previousGUIState = GUI.enabled;
-
-        if (Application.isPlaying)
+        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            GUI.enabled = false;
+            return EditorGUI.GetPropertyHeight(property, label, true);
         }
 
-        EditorGUI.PropertyField(position, property, label, true);
+        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+        {
+            bool previousGUIState = GUI.enabled;
 
-        GUI.enabled = previousGUIState;
+            if (Application.isPlaying)
+            {
+                GUI.enabled = false;
+            }
+
+            EditorGUI.PropertyField(position, property, label, true);
+
+            GUI.enabled = previousGUIState;
+        }
     }
 }
