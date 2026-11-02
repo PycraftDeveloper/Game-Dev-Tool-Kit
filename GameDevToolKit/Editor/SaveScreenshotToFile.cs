@@ -8,7 +8,7 @@ namespace GameDevToolKit.Editor
     {
         static private Camera SelectedCamera = null;
 
-        [MenuItem("Game Dev Tool Kit/Render Camera to file")]
+        [MenuItem("Game Dev Tool Kit/Tools/Render Camera to file")]
         public static void RenderCameraToFile()
         {
             RenderTexture rt = new RenderTexture(SelectedCamera.pixelWidth, SelectedCamera.pixelHeight, 24, RenderTextureFormat.ARGB32, RenderTextureReadWrite.sRGB);
@@ -36,7 +36,7 @@ namespace GameDevToolKit.Editor
             Debug.Log("Saved to " + path);
         }
 
-        [MenuItem("Game Dev Tool Kit/Render Camera to file", true)]
+        [MenuItem("Game Dev Tool Kit/Tools/Render Camera to file", true)]
         public static bool RenderCameraToFileValidation()
         {
             if (Selection.activeGameObject == null || Selection.activeGameObject.GetComponent<Camera>() == null)

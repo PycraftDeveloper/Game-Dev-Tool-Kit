@@ -5,7 +5,7 @@ namespace GameDevToolKit.Editor
 {
     public class SaveRenderTextureToFile
     {
-        [MenuItem("Game Dev Tool Kit/Save RenderTexture to file")]
+        [MenuItem("Game Dev Tool Kit/Tools/Save RenderTexture to file")]
         public static void SaveRTToFile()
         {
             RenderTexture rt = Selection.activeObject as RenderTexture;
@@ -24,7 +24,7 @@ namespace GameDevToolKit.Editor
             Debug.Log("Saved to " + path);
         }
 
-        [MenuItem("Game Dev Tool Kit/Save RenderTexture to file", true)]
+        [MenuItem("Game Dev Tool Kit/Tools/Save RenderTexture to file", true)]
         public static bool SaveRTToFileValidation()
         {
             return Selection.activeObject is RenderTexture;

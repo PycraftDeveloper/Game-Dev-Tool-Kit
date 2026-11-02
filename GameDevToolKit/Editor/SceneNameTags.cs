@@ -5,7 +5,7 @@ namespace GameDevToolKit.Editor
 {
     public class SceneNametags
     {
-        private const string MenuPath = "Game Dev Tool Kit/Show Name Tags";
+        private const string MenuPath = "Game Dev Tool Kit/Options/Show Name Tags";
 
         // Use EditorPrefs so the setting persists when closing Unity or recompiling
         private static bool ShowNameTags
