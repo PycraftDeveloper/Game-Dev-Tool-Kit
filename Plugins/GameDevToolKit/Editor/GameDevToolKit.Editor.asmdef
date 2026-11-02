@@ -2,8 +2,8 @@
     "name": "GameDevToolKit.Editor",
     "rootNamespace": "",
     "references": [
-        "GameDevToolKit.Runtime",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "GameDevToolKit.Runtime"
     ],
     "includePlatforms": [
         "Editor"
