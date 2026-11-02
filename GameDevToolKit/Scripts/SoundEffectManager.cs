@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace GameDevToolKit
 {
@@ -15,12 +16,13 @@ namespace GameDevToolKit
             GameObject NewAudioSource = new GameObject("SFX_ExtendedOneShot");
             AudioSource ExtendedAudioSourceComponent = NewAudioSource.AddComponent<AudioSource>();
             ExtendedOneShot ExtendedOneShotComponent = NewAudioSource.AddComponent<ExtendedOneShot>();
-            ExtendedAudioSourceComponent.clip = Setup._AudioClip;
+            AudioClip clip = Setup._AudioClip[Random.Range(0, Setup._AudioClip.Count)];
+            ExtendedAudioSourceComponent.clip = clip;
             ExtendedAudioSourceComponent.volume = SoundEffectVolumeControl * Setup.Volume;
             ExtendedAudioSourceComponent.panStereo = Setup.StereoPan;
             ExtendedAudioSourceComponent.pitch = Random.Range(1.0f - Setup.PitchRange, 1.0f + Setup.PitchRange);
             ExtendedAudioSourceComponent.Play();
-            ExtendedOneShotComponent.Lifetime = Setup._AudioClip.length;
+            ExtendedOneShotComponent.Lifetime = clip.length;
             NewAudioSource.transform.parent = transform;
             return NewAudioSource;
         }
@@ -29,7 +31,7 @@ namespace GameDevToolKit
     [System.Serializable]
     public class OneShotSetup
     {
-        public AudioClip _AudioClip;
+        public List<AudioClip> _AudioClip;
         [Range(0.0f, 1.0f)] public float Volume = 1.0f;
         [Range(-1.0f, 1.0f)] public float StereoPan = 0.0f;
         [Range(0.0f, 0.15f)] public float PitchRange = 0.15f;

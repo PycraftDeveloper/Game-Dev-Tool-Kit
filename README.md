@@ -1,5 +1,8 @@
 # Game Dev Tool Kit
 
+Download link: `https://github.com/PycraftDeveloper/Game-Dev-Tool-Kit.git?path=/GameDevToolKit`
+Put this in: `'Window > Package Management > Package Manager > '+' > Install package from git URL`
+
 ### _(v0.21.0)_
 
 Documentation: https://github.com/PycraftDeveloper/Game-Dev-Tool-Kit
